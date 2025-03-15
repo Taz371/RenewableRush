@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://dv6k6p5pqban3"]
+
+[ext_resource type="Texture2D" uid="uid://ds8x4oygcmsvx" path="res://Assets/windmill.png" id="1_xa4oq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u3d6"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms8g1"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(210, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8l1u"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(420, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65pn3"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(0, 210, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma5gg"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(210, 210, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuhme"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(420, 210, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_128ld"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(0, 420, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o1uw"]
+atlas = ExtResource("1_xa4oq")
+region = Rect2(210, 420, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wio1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u3d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms8g1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8l1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65pn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma5gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuhme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_128ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o1uw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5x78"]
+size = Vector2(55, 148)
+
+[node name="windmill" type="RigidBody2D"]
+mass = 70.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wio1o")
+autoplay = "default"
+frame_progress = 0.998006
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 8)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_l5x78")

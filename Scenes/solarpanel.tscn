@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://2k2agsg0gvke"]
+
+[ext_resource type="Texture2D" uid="uid://b77piw663ldjp" path="res://Assets/solar-removebg-preview.png" id="1_txw7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jlw3"]
+atlas = ExtResource("1_txw7s")
+region = Rect2(244, 99, 61, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjg0u"]
+atlas = ExtResource("1_txw7s")
+region = Rect2(244, 132, 61, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j4w3"]
+atlas = ExtResource("1_txw7s")
+region = Rect2(183, 0, 61, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8nne"]
+atlas = ExtResource("1_txw7s")
+region = Rect2(183, 33, 61, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysxop"]
+atlas = ExtResource("1_txw7s")
+region = Rect2(183, 66, 61, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rgga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jlw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjg0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j4w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8nne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysxop")
+}],
+"loop": true,
+"name": &"makingMoney",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg77h"]
+size = Vector2(61, 29)
+
+[node name="solarpanel" type="RigidBody2D"]
+mass = 10.0
+
+[node name="solaranim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rgga")
+animation = &"makingMoney"
+autoplay = "makingMoney"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_mg77h")
